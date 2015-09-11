@@ -1,0 +1,27 @@
+{
+  "name": "duck-web",
+  "version": "1",
+  "homepage": "https://github.com/simareeno/duck-web",
+  "authors": [
+    {
+      "name": "Sima Chetverukhin",
+      "email": "sima.chetverukhin@inn.ru"
+    }
+  ],
+  "description": "4duck website",
+  "keywords": [
+    "4duck",
+    "landing"
+  ],
+  "scripts": {
+    "install": [
+      "npm install",
+      "./node_modules/.bin/gulp --production"
+    ]
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
