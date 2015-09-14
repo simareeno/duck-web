@@ -6,15 +6,11 @@
 	<link rel="stylesheet" href="css/global.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="scripts/jquery.scrollTo.min.js"></script>
+	<script src="scripts/emerge.js"></script>
 	<script src="scripts/hide-dog.js" charset="utf-8"></script>
 </head>
 <body>
-
-	<div class="download">
-		<div class="download__title">Начни утиную охоту! Качай <a href="">приложении фогейм</a> и выигрывай призы</div>
-		<div class="download__app-store"><a href=""><img src="img/app-store.png" alt=""></a></div>
-		<div class="download__google-play"><a href=""><img src="img/google-play.png" alt=""></a></div>
-	</div>
 
 	<div class="grass">
 		<div class="grass__near"></div>
@@ -23,43 +19,51 @@
 
 	<div class="tree"><img src="img/tree.png" alt=""></div>
 	<div class="elka"><img src="img/elka.png" alt=""></div>
+	<div class="arrow-down"><img src="img/arrow-down.png" alt=""></div>
 
 	<div class="bar">
 		<img class="bar__left" src="img/bar-left.png" alt="">
 		<img class="bar__right" src="img/bar-right.png" alt="">
 	</div>
 
-<div class="first-screen section">
-
-	<div class="duck-fly"></div>
-
-	<div class="logo">
-		<img src="img/logo.png" alt="">
-		<h1 class="logo__desc">Та самая игра, теперь с призами за уток</h1>
+	<div class="nav">
+		<div class="nav__dot-wrapper nav__dot--active nav__first-screen" href=""><div class="nav__dot"></div></div>
+		<div class="nav__dot-wrapper nav__howto" href=""><div class="nav__dot"></div></div>
+		<div class="nav__dot-wrapper nav__try" href=""><div class="nav__dot"></div></div>
+		<div class="nav__dot-wrapper nav__app" href=""><div class="nav__dot"></div></div>
 	</div>
 
-	<div class="prizes">
-		<div class="prizes__single prizes--superprize"> <div class="prizes__useless"></div>
-			<div class="prizes__superprize">суперприз</div>
-			<div class="prizes__img"><img src="img/mc.gif" alt=""></div>
-			<div class="prizes__title">Mortal Kombat X</div>
-			<div class="prizes__steam">в steam</div>
-		</div>
-		<div class="prizes__single prizes--coin">
-			<div class="prizes__img"><img src="img/coin.gif" alt="" /></div>
-			<div class="prizes__title">Деньги<span class="prizes__less-title">на счет</span></div>
-		</div>
-		<div class="prizes__single prizes--buff">
-			<div class="prizes__img"><img src="img/potion.gif" alt="" /></div>
-			<div class="prizes__title">&nbsp;Бонусы <span class="prizes__less-title">к оплате</span></div>
-		</div>
-		<div class="prizes__single prizes--item">
-			<div class="prizes__img"><img src="img/sword.gif" alt="" /></div>
-			<div class="prizes__title">Предметы<span class="prizes__less-title">в играх</span></div>
-		</div>
-	</div>
+	<div class="first-screen section">
 
-</div>
+		<div class="duck-fly"></div>
+
+		<div class="logo">
+			<img src="img/logo.png" alt="">
+			<h1 class="logo__desc">Та самая игра, теперь с призами</h1>
+		</div>
+
+		<div class="prizes emerge">
+			<div class="prizes__single prizes--superprize"> <div class="prizes__useless"></div>
+				<div class="prizes__superprize">суперприз</div>
+				<div class="prizes__img"><img src="img/mc.gif" alt=""></div>
+				<div class="prizes__title">Mortal Kombat X</div>
+				<div class="prizes__steam">в steam</div>
+			</div>
+			<div class="prizes__single prizes--coin">
+				<div class="prizes__img"><img src="img/coin.gif" alt="" /></div>
+				<div class="prizes__title">Деньги<span class="prizes__less-title">на счет</span></div>
+			</div>
+			<div class="prizes__single prizes--buff">
+				<div class="prizes__img"><img src="img/potion.gif" alt="" /></div>
+				<div class="prizes__title">&nbsp;Бонусы <span class="prizes__less-title">к оплате</span></div>
+			</div>
+			<div class="prizes__single prizes--item">
+				<div class="prizes__img"><img src="img/sword.gif" alt="" /></div>
+				<div class="prizes__title">Предметы<span class="prizes__less-title">в играх</span></div>
+			</div>
+		</div>
+
+	</div>
 
 	<div class="howto section">
 		<h2>Как получить утку</h2>
@@ -68,14 +72,14 @@
 				<div class="howto__pic"><img src="img/holding-duck.png" alt=""></div>
 				<div class="howto__content">
 					<div class="howto__title">первая утка бесплатно</div>
-					<div class="howto__desc">Утки скоро кончатся, заходи в игру</br>чтобы получить свою</div>
+					<div class="howto__desc">Утки скоро кончатся, заходи в&nbsp;игру чтобы получить свою.</div>
 				</div>
 			</div>
 			<div class="howto__block">
 				<div class="howto__pic"><img src="img/big-logo.png" alt=""><img class="howto__flying" src="img/duck-fly.gif" alt=""></div>
 				<div class="howto__content">
 					<div class="howto__title">Играй в фогейме</div>
-					<div class="howto__desc">Заходи в игры 7 дней подряд –</br>и бесплатная утка твоя</div>
+					<div class="howto__desc">Заходи в игры 7 дней подряд&nbsp;– и&nbsp;бесплатная утка твоя.</div>
 				</div>
 			</div>
 		</div>
@@ -88,11 +92,23 @@
 	</div>
 
 	<div class="app section">
-		<h2>Отлично, к&nbsp;охоте&nbsp;готов!</h2>
-		<h3>Установи <a href="">приложение фогейм</a>, чтобы получать за охоту призы</h3>
+		<h2 class="app__title">Отлично, к&nbsp;охоте&nbsp;готов!</h2>
+		<h3 class="app__subtitle">Установи <a class="nice-link" href="">приложение&nbsp;фогейм</a>, чтобы получать призы&nbsp;за&nbsp;уток</h3>
+
+		<div class="download">
+			<div class="download__title">Начни утиную охоту! Качай <a class="nice-link" href="">приложении фогейм</a> и выигрывай призы</div>
+			<div class="download__app-store"><a href=""><img src="img/app-store.png" alt=""></a></div>
+			<div class="download__google-play"><a href=""><img src="img/google-play.png" alt=""></a></div>
+		</div>
+
 		<div class="app__line">
-			<div class="app__iphone"><img src="img/iphone.png" alt=""></div>
-			<div class="app__ipad"><img src="img/ipad.png" alt=""></div>
+			<div class="app__wrapper">
+				<div class="app__ipad">
+					<img class="app__ipad-pic" src="img/ipad.png" alt=""></div>
+				<div class="app__iphone">
+					<img class="app__iphone-pic" src="img/iphone.png" alt="">
+					<img class="app__iphone-shadow" src="img/iphone-shadow.png" alt=""></div>
+			</div>
 		</div>
 	</div>
 

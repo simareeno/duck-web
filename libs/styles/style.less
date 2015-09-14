@@ -49,7 +49,7 @@ h2 {
 }
 
 h3 {
-	font-size: 25px;
+	font-size: 24px;
 	line-height: 45px;
 	margin-top:20px;
 	position: relative;
@@ -64,7 +64,7 @@ h3 {
 	position: absolute;
 	top: 0;
 	left: 50%;
-	margin-left: -670px;
+	margin-left: -600px;
 
 	&__right {
 		float:right;
@@ -176,7 +176,7 @@ h3 {
 		}
 
 		.prizes__title {
-			text-shadow: 0px 6px 0px black, 4px 0px 0px black, 0px -4px 0px black, -4px 0px 0px black, -4px -4px 0px black, 4px 4px 0px black, -4px 6px 0px black, 4px 6px 0px black ;
+			text-shadow: 0px 6px 0px black, 4px -4px 0 #000, 4px 0px 0px black, 0px -4px 0px black, -4px 0px 0px black, -4px -4px 0px black, 4px 4px 0px black, -4px 6px 0px black, 4px 6px 0px black ;
 			top: 40px;
 		}
 
@@ -230,6 +230,45 @@ h3 {
 		bottom:-100px;
 		background-position: 50% 0;
 		image-rendering: pixelated;
+		// animation: showGrass .5s both ease-in;
+	}
+}
+
+.tree {
+	position: fixed;
+	left:50px;
+	bottom:-150px;
+	z-index: 60;
+	// animation: showTree .5s both ease-in;
+}
+
+.elka {
+	position: fixed;
+	right:50px;
+	bottom:50px;
+	z-index: 60;
+	// animation: showTheElka .5s both ease-in;
+}
+
+.arrow-down {
+	position: fixed;
+	bottom:15px;
+	z-index: 101;
+	left:50%;
+	margin-left:-25px;
+	animation: arrow-down 1s steps(2, end);
+	animation-iteration-count: infinite;
+}
+
+.nice-link {
+	padding: 0 0 10px 0;
+	border-bottom:5px solid rgba(255, 255, 255, 0);
+	transition: padding .2s ease-out, border-bottom .2s ease-out;
+
+	&:hover {
+		padding: 0 0 5px 0;
+		border-bottom:5px solid rgba(255, 255, 255, 1);;
+		transition: padding .2s ease-in, border-bottom .2s ease-out;
 	}
 }
 
@@ -240,25 +279,13 @@ h3 {
 	bottom:-7px;
 	z-index: 101;
 	left: 50%;
-	transition: transform .2s;
+	// transition: transform .2s;
 	width:980px;
 
 	&__title {
 		font-size:20px;
 		margin-bottom:30px;
 		line-height: 30px;
-
-		a {
-			padding: 0 0 10px 0;
-			border-bottom:5px solid rgba(255, 255, 255, 0);
-			transition: padding .2s ease-out, border-bottom .2s ease-out;
-
-			&:hover {
-				padding: 0 0 5px 0;
-				border-bottom:5px solid rgba(255, 255, 255, 1);;
-				transition: padding .2s ease-in, border-bottom .2s ease-out;
-			}
-		}
 	}
 
 	&__app-store, &__google-play {
@@ -272,20 +299,6 @@ h3 {
 			transform: translateY(-13px)
 		}
 	}
-}
-
-.tree {
-	position: fixed;
-	left:50px;
-	bottom:-150px;
-	z-index: 60;
-}
-
-.elka {
-	position: fixed;
-	right:50px;
-	bottom:50px;
-	z-index: 60;
 }
 
 .duck-fly {
@@ -302,8 +315,7 @@ h3 {
 	&:hover {
 		animation-play-state: paused;
 		background-image: url(../img/watching-you.gif);
-		transform:translateY(20px);
-		background-position-y: -18px;
+		background-position-y: 0;
 		background-size:88%;
 	}
 
@@ -325,6 +337,42 @@ h3 {
 	}
 }
 
+.nav {
+	position: fixed;
+	right:0;
+	top:50%;
+	display: flex;
+	flex-direction: column;
+	z-index: 110;
+	margin-top: -100px;
+
+	&__dot-wrapper {
+		width: 70px;
+		height: 50px;
+
+		&:hover .nav__dot {
+			box-shadow: 5px 0 0 white, -5px 0 0 white, 0 5px 0 white, 0 -5px 0 white, 5px 5px 0 #00abd0, 0 10px 0 #00abd0, -5px 5px 0 #00abd0;
+			transform: translate(0,-5px);
+		}
+	}
+
+	&__dot--active {
+
+		.nav__dot {
+			background-color:white;
+		}
+	}
+
+	&__dot {
+		width:10px;
+		height:10px;
+		box-shadow: 5px 0 0 white, -5px 0 0 white, 0 5px 0 white, 0 -5px 0 white;
+		transform: translate(0);
+		transition: box-shadow .2s, transform .2s;
+		margin: 20px auto 0;
+	}
+}
+
 .section {
 	display:flex;
 	flex-direction: column;
@@ -336,15 +384,12 @@ h3 {
 	justify-content: center;
 	overflow: hidden;
 	min-height: 700px;
-	// max-height:900px;
 }
 
 .howto {
 	padding: 0 150px 75pt;
 	min-height: 900px;
 	max-height:1100px;
-	// background-color: #1dcff5;
-    // padding: 100px 0 0 0;
 	justify-content: center;
 
 	&__blocks {
@@ -356,15 +401,14 @@ h3 {
 	}
 
 	&__block {
-		display:flex;
+		display: table;
 		margin-top: 50px;
 	}
 
 	&__content {
-		display: flex;
-		flex-direction: column;
-		margin-left:50px;
-		justify-content: center;
+		display: table-cell;
+	    vertical-align: top;
+	    padding-left: 50px;
 	}
 
 	&__title {
@@ -376,11 +420,13 @@ h3 {
 		font-size:20px;
 		line-height: 40px;
 		margin-top:20px;
+		color:#baf3ff;
 	}
 
 	&__pic {
 		width: 230px;
 		position: relative;
+		display: table-cell;
 	}
 
 	&__flying {
@@ -397,40 +443,57 @@ h3 {
 
 .try {
 	padding: 100px 150px 0;
+	max-height: 900px;
 
 	&__gun {
-		top: 50%;
-		position: absolute;
-		margin-top: -100px;
-		left: 50%;
-		margin-left: -213px;
+		margin-top: 75pt;
 	}
 }
 
 .app {
-	padding: 75pt 150px 0;
+	padding: 0 50px 0;
+
+	&__wrapper {
+		display: table-cell;
+		vertical-align: bottom;
+		height:inherit;
+	}
 
 	&__line {
 		position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -490px;
-    width: 980px;
+	    bottom: 0;
+	    left: 50%;
+	    margin-left: -490px;
+		width: 1002px;
+		overflow: hidden;
 	}
 
 	&__ipad, &__iphone {
-		z-index: 101;
-		position: absolute;
+		display: inline-block;
+		position: relative;
 		bottom: 0px;
 	}
 
-	&__iphone {
-		z-index: 102;
-		right:0;
+	&__ipad-pic, &__iphone-pic {
+		position: relative;
+		z-index: 101;
 	}
 
-	&__ipad {
-		left:0;
+	&__iphone-pic {
+		box-shadow: -4px 31px 0 0 rgba(0, 0, 0, .05), -8px 31px 0 0 rgba(0, 0, 0, .05);
+	}
+
+	&__iphone-shadow {
+		position: absolute;
+		right: -8px;
+		z-index: 100;
+		top: 8px;
+		opacity: .5;
+	}
+
+	&__iphone {
+		margin-left: -171px;
+		top: 100px;
 	}
 }
 
@@ -442,6 +505,10 @@ h3 {
 
   .tree {
 	  bottom:0px;
+  }
+
+  .app {
+	  padding: 75pt 150px 0;
   }
 }
 
@@ -457,4 +524,24 @@ h3 {
 @keyframes duck-fly {
 	0% {left:-5%}
 	100% {left:95%;}
+}
+
+@keyframes showGrass {
+	0% {bottom:-125px}
+	100% {bottom:-100px}
+}
+
+@keyframes showTree {
+	0% {left:25px; bottom:-175px;}
+	100% {left:50px; bottom:-150px;}
+}
+
+@keyframes showTheElka {
+	0% {right:25px; bottom:25px;}
+	100% {right:50px; bottom:50px;}
+}
+
+@keyframes arrow-down {
+	0% {transform:translate(0,0)}
+	100% {transform:translate(0,10px)}
 }

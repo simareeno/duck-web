@@ -15,6 +15,7 @@ var HTML = '*.html';
 var IMAGES = './libs/img/**/*';
 var STYLES = './libs/styles/**/*.less';
 var SCRIPTS = './libs/scripts/**/*.js';
+var FONTS = './libs/fonts/**/*';
 
 gulp.task('img', function() {
 	return gulp.src(IMAGES)
@@ -26,6 +27,12 @@ gulp.task('html', function() {
 	return gulp.src(HTML)
 		.pipe(plumber())
 		.pipe(gulp.dest('./out/prod'));
+});
+
+gulp.task('fonts', function() {
+	return gulp.src(FONTS)
+		.pipe(plumber())
+		.pipe(gulp.dest('./out/prod/fonts'));
 });
 
 gulp.task('scripts', function() {
@@ -51,4 +58,4 @@ gulp.task('watch', function() {
   gulp.watch(SCRIPTS, ['scripts']);
 });
 
-gulp.task('default', ['img', 'styles', 'scripts', 'html']);
+gulp.task('default', ['img', 'styles', 'scripts', 'fonts', 'html']);
