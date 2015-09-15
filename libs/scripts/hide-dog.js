@@ -39,6 +39,12 @@ $(document).ready(function() {
         };
     });
 
+    $('.try__sound').click(function () {
+        $(this).toggleClass('sound--off');
+        console.log($(this));
+    })
+
+
 	$(window).scroll(function (event) {
         var scroll = $(window).scrollTop(); // сколько проскроллили
         var scrollStep = scroll * -0.7;

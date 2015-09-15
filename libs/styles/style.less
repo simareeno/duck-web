@@ -280,7 +280,7 @@ h3 {
 	z-index: 101;
 	left: 50%;
 	// transition: transform .2s;
-	width:980px;
+	width:1020px;
 
 	&__title {
 		font-size:20px;
@@ -349,6 +349,7 @@ h3 {
 	&__dot-wrapper {
 		width: 70px;
 		height: 50px;
+		cursor: pointer;
 
 		&:hover .nav__dot {
 			box-shadow: 5px 0 0 white, -5px 0 0 white, 0 5px 0 white, 0 -5px 0 white, 5px 5px 0 #00abd0, 0 10px 0 #00abd0, -5px 5px 0 #00abd0;
@@ -448,6 +449,74 @@ h3 {
 	&__gun {
 		margin-top: 75pt;
 	}
+
+	&__sound {
+	    display: flex;
+	    align-items: center;
+		cursor: pointer;
+		margin-top:15px;
+		width:190px;
+		user-select:none;
+	}
+
+	&__sound-icon {
+		margin-right: 20px;
+		width:52px;
+		position: relative;
+	}
+
+	&__brick {
+		position: absolute;
+		width:5px;
+		height:5px;
+		background-color: white;
+		transition: top .1s, right .1s;
+	}
+
+	&__sound-text-off {
+		display:none;
+	}
+}
+
+.brick(@number,@top,@right) {
+
+	.brick--@{number} {
+		top:@top;
+		right:@right;
+	}
+
+}
+
+.brick(1,9px,12px);
+.brick(2,14px,10px);
+.brick(3,19px,12px);
+.brick(4,1px,5px);
+.brick(5,6px,3px);
+.brick(6,11px,1px);
+.brick(7,16px,1px);
+.brick(8,21px,3px);
+.brick(9,26px,5px);
+
+
+.sound--off {
+
+	.try__sound-text-off {
+		display:block;
+	}
+
+	.try__sound-text-on {
+		display: none;
+	}
+
+	.brick(1,9px,12px);
+	.brick(2,14px,7px);
+	.brick(3,19px,12px);
+	.brick(4,9px,3px);
+	.brick(5,9px,3px);
+	.brick(6,14px,7px);
+	.brick(7,14px,7px);
+	.brick(8,19px,3px);
+	.brick(9,19px,3px);
 }
 
 .app {
